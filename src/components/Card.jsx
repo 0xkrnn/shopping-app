@@ -10,13 +10,13 @@ function Card({ product }) {
         let filteredCart = cart.filter((item) => {
             return item.id !== id
         });
-        setCart(filteredCart)
+        setCart([...filteredCart])
     };
 
 
     return (
         <>
-            <div className='card-container'>
+            <div className='card-container' >
                 <section >
                     <img src={product.image} className='card-img' alt={product.name} />
                 </section>

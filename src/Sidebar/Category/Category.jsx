@@ -1,25 +1,22 @@
 import React from 'react';
 import "./Category.css"
 
-function Category() {
+function Category({ functionality: { category, setCategory } }) {
+
+    const categories = ["all", "men", "women", "kid"]
+
+    const categoryList = categories.map((cat) => {
+        return <section key={cat}>
+            <input type="radio" name='category' value={cat} onChange={(e) => setCategory(e.target.value)} /> <span>{cat.toUpperCase()}</span>
+        </section>
+    })
+
     return (
         <div>
             <div className='category-container'>
                 <h4>CATEGORY</h4>
                 <div>
-                    <section>
-                        <input type="radio" name='category' /> <span>All</span>
-                    </section>
-                    <section>
-                        <input type="radio" name='category' /> <span>Men</span>
-                    </section>
-                    <section>
-                        <input type="radio" name='category' /> <span>Women</span>
-                    </section>
-                    <section>
-                        <input type="radio" name='category' /> <span>Kids</span>
-                    </section>
-
+                    {categoryList}
                 </div>
             </div>
         </div>

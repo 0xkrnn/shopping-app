@@ -3,11 +3,11 @@ import Price from './Price/Price';
 import Category from './Category/Category';
 import "./Sidebar.css"
 
-function Sidebar() {
+function Sidebar({ functionality: { category, setCategory, price, setPrice } }) {
     return (
         <div className='sidebar'>
-            <Price />
-            <Category />
+            <Price functionality={{ price, setPrice }} />
+            <Category functionality={{ category, setCategory }} />
         </div>
     );
 }
